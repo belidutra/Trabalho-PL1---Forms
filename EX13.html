@@ -1,0 +1,54 @@
+<!DOCTYPE PHP>
+<html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apostila PHP Progressivo</title>
+ </head>
+ <body>
+
+  Lado 1:  <input type="number" id="n1" /><br />
+  Lado 2:  <input type="number" id="n2" /><br />
+  Lado 3:  <input type="number" id="n3" /><br />
+  <button onclick="tabuada()">Verificar</button><br /><br>
+  Resultado: <br />
+    <div id='resposta' style='display:inline'></div>
+ 
+ <script lang="javascript">
+     function tabuada(){
+      var n1 = parseInt(document.getElementById("n1").value);
+  var n2 = parseInt(document.getElementById('n2').value);
+  var n3 = parseInt(document.getElementById('n3').value);
+  var resposta = document.getElementById('resposta');
+  var resultado='';
+  var positivo = 0;
+    if(( n1 < n2 + n3 ) && ( n2 < n1 + n3 ) && ( n3 < n1 + n2 ))
+    {
+    positivo++
+    document.write("<h1>É um triângulo, do tipo: </h1>")
+    }
+    else
+    document.write("Não é um triângulo")
+    if(positivo == 1)
+    if((n1 != n2) && (n2 != n3) && (n1 != n3)) 
+    { 
+    document.write("<h1>escaleno</h1>")
+    document.write("<img src=escaleno.jpg > ")
+  }
+    if ((n1 == n2) && (n1 != n3) || (n1 == n3) && (n1 != n2) || (n2 == n3) && (n1 != n2))
+    {
+    document.write("<h1>isósceles</h1>")
+    document.write("<img src=isosceles.jpg > ")
+  }
+    if((n1 == n2) && (n1 == n3))
+    {
+    document.write("<h1>equilátero</h1>")
+    document.write("<img src=equilatero.jpg > ")
+    }
+    resposta.innerHTML = resultado;
+}
+    </script>
+ 
+ </body>
+</html>
